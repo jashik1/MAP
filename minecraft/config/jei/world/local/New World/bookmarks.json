@@ -1,0 +1,6 @@
+[
+  {"version":1},
+  {"type":"item_stack","value":"{Count:1b,id:\"tconstruct:tinker_station\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"tconstruct:part_builder\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"tconstruct:crafting_station\"}"}
+]

@@ -1,0 +1,18 @@
+filename = 'great_scrollable_tooltips-15.5.0+forge.jar'
+name = 'Great Scrollable Tooltips'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '15.5.0+forge'
+
+[download]
+hash = '064312ba508014bbcca50cd71460c926ccf95396c472f369f45563cd31a71d5189a107ccd05995a6782f64bcdb644bb3c454bb49aa58d3e5876864506359812f'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/mzNYT2LK/versions/rjB7WuqC/great_scrollable_tooltips-15.5.0%2Bforge.jar'
+
+[update.modrinth]
+mod-id = 'mzNYT2LK'
+version = 'rjB7WuqC'

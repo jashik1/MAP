@@ -1,0 +1,12 @@
+minecraft/kubejs/server_scripts/jsconfig.json
+minecraft/crash-reports/
+minecraft/ESM/
+minecraft/essential/
+minecraft/local/
+minecraft/logs
+minecraft/saves/
+minecraft/options.txt
+minecraft/patchouli_data.json
+minecraft/rhino.local.properties
+minecraft/usercache.json
+minecraft/usernamecache.json
