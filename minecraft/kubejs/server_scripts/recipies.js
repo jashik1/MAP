@@ -45,19 +45,22 @@ ServerEvents.recipes(event => {
 	})
   event.campfireCooking('tconstruct:seared_brick', 'tconstruct:grout', 0.35, 600)
   event.campfireCooking('minecraft:glass', '#minecraft:smelts_to_glass', 0.35, 600)
-  event.custom({
-  type: 'tconstruct:casting_basin',
-  cast: { tag: 'forge:andesite'},
-  cast_consumed: true,
-  cooling_time: 30,
-  fluid: { amount: 20, tag: 'tconstruct:molten_copper' },
-  result: 'create:andesite_alloy'
-  })
-  event.custom({
-    type: 'create:sequenced_assembly',
-    ingredient: {tag: 'forge:plates/brass'},
-    loops: 1,
-    results: [{item: 'kubejs:hardened_brass_sheet'}],
-    sequence: [
-  })
+  event.recipes.tconstruct.casting_basin('create:andesite_alloy').fluid('tconstruct:molten_copper', 20).cast('#forge:andesite').cast_consumed(true).cooling_time(30)
+  const transitionalItem = 'kubejs:unprocessed_hardened_brass_sheet'
+  event.recipes.create.sequenced_assembly(
+      [
+        'kubejs:hardened_brass_sheet'
+      ],
+        'create:brass_sheet', 
+      [
+        event.recipes.create.filling(transitionalItem, [transitionalItem, Fluid.of('tconstruct:molten_iron', 250)]),
+        event.recipes.create.pressing(transitionalItem, transitionalItem),
+        event.recipes.create.pressing(transitionalItem, transitionalItem)
+      ]
+    )
+    .transitionalItem(transitionalItem)
+    .loops(1)
+    event.replaceInput({id: 'create:item_application/brass_casing_from_log'}, 'create:brass_ingot', 'kubejs:hardened_brass_sheet')
+    event.replaceInput({id: 'create:item_application/brass_casing_from_log'}, '#forge:stripped_logs', 'create:andesite_casing')
+    event.remove({id: 'create:item_application/brass_casing_from_wood'})
 })
