@@ -5,9 +5,6 @@ event.remove([{ output: 'minecraft:stone_axe' } , { output: 'minecraft:iron_axe'
 event.remove([{ output: 'minecraft:stone_sword' } , { output: 'minecraft:iron_sword' } , { output: 'minecraft:wooden_sword' } , { output: 'minecraft:golden_sword' } , { output: 'minecraft:diamond_sword' } , { output: 'ae2:nether_quartz_sword' } , { output: 'ae2:fluix_sword' } , { output: 'ae2:certus_quartz_sword' } , { output: 'immersiveengineering:sword_steel'} , { output: 'mekanismtools:bronze_sword'} , { output: 'mekanismtools:lapis_lazuli_sword'} , { output: 'mekanismtools:osmium_sword'} , { output: 'mekanismtools:refined_glowstone_sword'} , { output: 'mekanismtools:refined_obsidian_sword'} , { output: 'mekanismtools:steel_sword'}])
 event.remove([{ output: 'minecraft:stone_hoe' } , { output: 'minecraft:iron_hoe' } , { output: 'minecraft:wooden_hoe' } , { output: 'minecraft:golden_hoe' } , { output: 'minecraft:diamond_hoe' } , { output: 'ae2:nether_quartz_hoe' } , { output: 'ae2:fluix_hoe' } , { output: 'ae2:certus_quartz_hoe' } , { output: 'immersiveengineering:hoe_steel'} , { output: 'mekanismtools:bronze_hoe'} , { output: 'mekanismtools:lapis_lazuli_hoe'} , { output: 'mekanismtools:osmium_hoe'} , { output: 'mekanismtools:refined_glowstone_hoe'} , { output: 'mekanismtools:refined_obsidian_hoe'} , { output: 'mekanismtools:steel_hoe'}])
 event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:stick'}, {id:'tconstruct:tables/pattern'}, {id:'minecraft:furnace'}])
-})
-// fluix tools
-ServerEvents.recipes(event => {
     event.shaped(
   Item.of('minecraft:stick', 2),
   [
@@ -31,36 +28,10 @@ ServerEvents.recipes(event => {
     B: '#forge:rods/wooden'
   }
 )
-    event.shapeless(
-  Item.of('minecraft:gravel', 1),
-  [
-    'kubejs:pebble',
-    'kubejs:rock',
-    '#kubejs:igneous_pebbles',
-    '#kubejs:igneous_pebbles'
-  ])
   const sands = ['white', 'blue', 'pink', 'purple', 'black']
 	sands.forEach(sand => {
     event.campfireCooking(`minecraft:${sand}_stained_glass`, `biomeswevegone:${sand}_sand`, 0.35, 600)
 	})
   event.campfireCooking('tconstruct:seared_brick', 'tconstruct:grout', 0.35, 600)
   event.campfireCooking('minecraft:glass', '#minecraft:smelts_to_glass', 0.35, 600)
-  event.recipes.tconstruct.casting_basin('create:andesite_alloy').fluid('tconstruct:molten_copper', 20).cast('#forge:andesite').cast_consumed(true).cooling_time(30)
-  const transitionalItem = 'kubejs:unprocessed_hardened_brass_sheet'
-  event.recipes.create.sequenced_assembly(
-      [
-        'kubejs:hardened_brass_sheet'
-      ],
-        'create:brass_sheet', 
-      [
-        event.recipes.create.filling(transitionalItem, [transitionalItem, Fluid.of('tconstruct:molten_iron', 250)]),
-        event.recipes.create.pressing(transitionalItem, transitionalItem),
-        event.recipes.create.pressing(transitionalItem, transitionalItem)
-      ]
-    )
-    .transitionalItem(transitionalItem)
-    .loops(1)
-    event.replaceInput({id: 'create:item_application/brass_casing_from_log'}, 'create:brass_ingot', 'kubejs:hardened_brass_sheet')
-    event.replaceInput({id: 'create:item_application/brass_casing_from_log'}, '#forge:stripped_logs', 'create:andesite_casing')
-    event.remove({id: 'create:item_application/brass_casing_from_wood'})
 })

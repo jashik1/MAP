@@ -14,3 +14,13 @@ LootJS.modifiers(event => {
              Item.of("minecraft:iron_nugget").withChance(1.25)
             ])
 })
+ServerEvents.recipes(event => {
+    event.shapeless(
+  Item.of('minecraft:gravel', 1),
+  [
+    'kubejs:pebble',
+    'kubejs:rock',
+    '#kubejs:igneous_pebbles',
+    '#kubejs:igneous_pebbles'
+  ])
+})
