@@ -10,7 +10,10 @@ ServerEvents.recipes(event => {
       [
         event.recipes.create.filling(transitionalItem, [transitionalItem, Fluid.of('tconstruct:molten_iron', 250)]),
         event.recipes.create.pressing(transitionalItem, transitionalItem),
-        event.recipes.create.pressing(transitionalItem, transitionalItem)
+        event.recipes.create.deploying(transitionalItem, [transitionalItem, 'minecraft:iron_nugget']),
+        event.recipes.create.filling(transitionalItem, [transitionalItem, Fluid.of('tconstruct:molten_osmium', 250)]),
+        event.recipes.create.pressing(transitionalItem, transitionalItem),
+        event.recipes.create.deploying(transitionalItem, [transitionalItem, 'mekanism:nugget_osmium']),
       ]
     )
     .transitionalItem(transitionalItem)
@@ -21,6 +24,11 @@ ServerEvents.recipes(event => {
     event.remove({id: 'create:item_application/brass_casing_from_wood'})
     event.replaceInput({id: 'create:item_application/copper_casing_from_log'}, '#forge:stripped_logs', 'create:andesite_casing')
     event.remove({id: 'create:item_application/copper_casing_from_wood'})
+
+    event.remove({id: 'create:crushing/diorite_recycling'})
+    event.recipes.create.crushing(Item.of('minecraft:quartz').withChance(0.9), '#create:stone_types/diorite')
+    event.remove({id: 'create:crushing/diorite'})
+    event.recipes.create.milling(Item.of('minecraft:quartz').withChance(0.6), '#create:stone_types/diorite')
 
     event.remove({id: 'create:crafting/kinetics/mechanical_press'})
     event.shaped(Item.of('create:mechanical_press', 1), [
@@ -55,5 +63,33 @@ ServerEvents.recipes(event => {
       B: 'create:cogwheel',
       C: 'create:whisk',
       D: 'create:piston_extension_pole'
+    })
+    event.remove({id: 'create:crafting/kinetics/spout'})
+    event.shaped(Item.of('create:spout', 1), [
+      ' A ',
+      'DBD',
+      ' C '
+    ], {
+      A: 'create:electron_tube',
+      B: 'create:fluid_tank',
+      C: 'kubejs:nozzle',
+      D: 'create:andesite_alloy'
+    })
+    event.shaped(Item.of('kubejs:nozzle', 1), [
+      'ABA',
+      ' A '
+    ], {
+      A: '#forge:plates/copper',
+      B: 'minecraft:dried_kelp'
+    })
+    event.remove({id: 'create:crafting/kinetics/fluid_tank'})
+    event.shaped(Item.of('create:fluid_tank', 1), [
+      'ABA',
+      'BCB',
+      'ABA'
+    ], {
+      A: '#forge:plates/copper',
+      B: '#forge:glass',
+      C: 'minecraft:barrel'
     })
 })
