@@ -1,0 +1,21 @@
+filename = 'jei_gateways-1.3fix.jar'
+name = 'JEI Gateways'
+side = 'server'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.20.1-forge-JEI Gateways-1.3fix-JEI 15.74.0.234+'
+
+[download]
+hash = '642e209bf79c6690379492d3f32920bdd01f89a6'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 9406065
+project-id = 1556744
+
+[[x-prismlauncher-dependencies]]
+addonId = '238222'
+type = 'REQUIRED'
