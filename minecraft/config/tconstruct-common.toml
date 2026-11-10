@@ -2,7 +2,7 @@
 #Everything to do with gameplay
 [gameplay]
 	#Set this to false to disable new players spawning with the Tinkers' Book.
-	shouldSpawnWithTinkersBook = true
+	shouldSpawnWithTinkersBook = false
 	#If true, extends the applicable slots for the fire protection enchantment to work better with shields. Will not impact gameplay with the vanilla enchantment.
 	#If false, fire protection on a shield will not reduce fire tick time.
 	extendFireProtectionSlots = true
@@ -41,10 +41,10 @@
 		[recipes.ore_rates.melter]
 			#Number of nuggets produced per metal ore unit melted. 9 nuggets would give 1 ingot
 			#Range: 1 ~ 45
-			nuggetsPerMetal = 12
+			nuggetsPerMetal = 9
 			#Number of gem shards produced per gem ore unit melted. 4 gem shards would give 1 gem
 			#Range: 1 ~ 20
-			shardsPerGem = 8
+			shardsPerGem = 4
 
 		#Ore rates when melting in the smeltery
 		[recipes.ore_rates.smeltery]
@@ -53,25 +53,25 @@
 			nuggetsPerMetal = 12
 			#Number of gem shards produced per gem ore unit melted. 4 gem shards would give 1 gem
 			#Range: 1 ~ 20
-			shardsPerGem = 8
+			shardsPerGem = 5
 
 		#Ore rates when melting in the foundry
 		[recipes.ore_rates.foundry]
 			#Number of nuggets produced per metal ore unit melted. 9 nuggets would give 1 ingot
 			#Range: 1 ~ 45
-			nuggetsPerMetal = 9
+			nuggetsPerMetal = 18
 			#Number of gem shards produced per gem ore unit melted. 4 gem shards would give 1 gem
 			#Range: 1 ~ 20
-			shardsPerGem = 4
+			shardsPerGem = 8
 
 		#Byproduct rates when melting in the foundry
 		[recipes.ore_rates.foundry_byproduct]
 			#Number of nuggets produced per metal ore unit melted. 9 nuggets would give 1 ingot
 			#Range: 1 ~ 45
-			nuggetsPerMetal = 3
+			nuggetsPerMetal = 5
 			#Number of gem shards produced per gem ore unit melted. 4 gem shards would give 1 gem
 			#Range: 1 ~ 20
-			shardsPerGem = 4
+			shardsPerGem = 2
 
 	#Entity head drops when killed by a charged creeper
 	[recipes.heads]
