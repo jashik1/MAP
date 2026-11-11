@@ -92,4 +92,22 @@ ServerEvents.recipes(event => {
       B: '#forge:glass',
       C: 'minecraft:barrel'
     })
+    event.remove({id: 'create:crafting/kinetics/millstone'})
+    event.shaped(Item.of('create:millstone', 1), [
+      ' A ',
+      ' B ',
+      ' C '
+    ], {
+      A: 'create:andesite_casing',
+      B: 'kubejs:millstone_gear',
+      C: '#forge:stone'
+    })
+    event.shaped(Item.of('kubejs:millstone_gear', 1), [
+      'BBB',
+      'BAB',
+      'BBB'
+    ], {
+      A: 'create:shaft',
+      B: '#forge:stone'
+    })
 })

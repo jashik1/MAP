@@ -1,0 +1,11 @@
+  JEIEvents.hideItems(event => {
+  event.hide('tconstruct:rod_cast')
+  event.hide('tconstruct:plate_cast')
+  event.hide('tconstruct:wire_cast')
+  event.hide('tconstruct:rod_sand_cast')
+  event.hide('tconstruct:plate_sand_cast')
+  event.hide('tconstruct:wire_sand_cast')
+  event.hide('tconstruct:rod_red_sand_cast')
+  event.hide('tconstruct:plate_red_sand_cast')
+  event.hide('tconstruct:wire_red_sand_cast')
+})
