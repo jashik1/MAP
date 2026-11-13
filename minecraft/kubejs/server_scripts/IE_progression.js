@@ -49,4 +49,15 @@ ServerEvents.recipes(event => {
         A: '#forge:rods/steel',
         B: '#forge:ingots/steel'
     })
+    event.remove({id: 'immersiveengineering:crafting/craftingtable'})
+    event.shaped(Item.of('immersiveengineering:craftingtable', 1), [
+        'AAA',
+        'BCB',
+        'BDB'
+    ], {
+        A: '#forge:treted_wood_slab',
+        B: '#forge:rods/treated_wood',
+        C: 'minecraft:crafting_table',
+        D: 'minecraft:chest'
+    })
 })

@@ -1,0 +1,25 @@
+filename = 'kubejsca-1.20.1-1.0.jar'
+name = 'Kubejs C:C&A'
+side = 'server'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'kubejsca-1.20.1-1.0.jar'
+
+[download]
+hash = '10ea8624193ff36cc795aa927b3dadf348b70a91'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 6798970
+project-id = 1311892
+
+[[x-prismlauncher-dependencies]]
+addonId = '238086'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '429371'
+type = 'REQUIRED'
