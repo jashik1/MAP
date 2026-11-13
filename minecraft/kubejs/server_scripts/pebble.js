@@ -1,8 +1,8 @@
 ServerEvents.recipes(event => {
   const stones = (output, pebble) => {
     event.shaped(output, [
-      'AA ',
-      'AA '
+      'AA',
+      'AA'
     ], {
       A: pebble
     })

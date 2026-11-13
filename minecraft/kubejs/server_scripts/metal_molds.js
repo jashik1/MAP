@@ -3,6 +3,14 @@ ServerEvents.recipes(event => {
     const plate_metals = ['iron', 'gold', 'copper', 'aluminum', 'lead', 'nickel', 'silver', 'uranium', 'constantan', 'steel', 'electrum']
     plate_metals.forEach(metal => {
         event.shapeless(`#forge:plates/${metal}`, [`2x #forge:ingots/${metal}`, 'immersiveengineering:hammer'])
+        event.shaped(Item.of(`immersiveengineering:sheetmetal_${metal}`, 1), [
+            'AAA',
+            'A A',
+            'AAA'
+        ], {
+            A: `#forge:plates/${metal}`
+        })
+        event.remove({id: `immersiveengineering:crafting/sheetmetal_${metal}`})
     })
 
     event.remove({not: { type: 'immersiveengineering:metal_press' }, output: '#forge:rods/all_metal'})
@@ -16,8 +24,8 @@ ServerEvents.recipes(event => {
         })
         event.recipes.createaddition.rolling(`#forge:ingots/${metal}`, `#forge:rods/${metal}`)
     })
-    
-    event.remove({type: 'createaddition:rolling_mill', output: '#forge:wires'})
+
+    event.remove({type: 'createaddition:rolling', output: '#forge:wires'})
     const wire_metals = ['copper', 'gold', 'aluminum', 'steel', 'electrum', 'lead', 'iron']
     wire_metals.forEach(metal => {
         event.recipes.createaddition.rolling(`#forge:plates/${metal}`, `#forge:wires/${metal}`)

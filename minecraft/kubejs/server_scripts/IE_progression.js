@@ -55,7 +55,7 @@ ServerEvents.recipes(event => {
         'BCB',
         'BDB'
     ], {
-        A: '#forge:treted_wood_slab',
+        A: '#forge:treated_wood_slab',
         B: '#forge:rods/treated_wood',
         C: 'minecraft:crafting_table',
         D: 'minecraft:chest'
