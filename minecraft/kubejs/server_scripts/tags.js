@@ -31,4 +31,5 @@ ServerEvents.tags('item', event => {
   event.add('forge:gears', 'enderio:iron_gear')
   event.add('forge:ingots', 'kubejs:simple_redstone_alloy_ingot')
   event.add('balm:ingots', 'kubejs:simple_redstone_alloy_ingot')
+  event.add('forge:plates', 'kubejs:hardened_brass_sheet')
 })

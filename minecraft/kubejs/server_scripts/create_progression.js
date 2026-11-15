@@ -137,4 +137,19 @@ ServerEvents.recipes(event => {
     B: 'create:andesite_alloy',
     D: '#minecraft:planks'
   })
+  event.remove({id: 'createaddition:mechanical_crafting/alternator'})
+  event.recipes.create.mechanical_crafting('createaddition:alternator', [
+    '  A  ',
+    ' BCB ',
+    'BCDCB',
+    ' EFE '
+  ], {
+    A: 'create:shaft',
+    B: 'kubejs:hardened_brass_sheet',
+    C: 'createaddition:copper_spool',
+    D: '#forge:rods/iron',
+    E: '#forge:plates/iron',
+    F: 'createaddition:capacitor'
+  })
+  event.replaceInput({id: 'createaddition:crafting/spool'}, '#forge:nuggets/iron', '#forge:rods/iron')
 })

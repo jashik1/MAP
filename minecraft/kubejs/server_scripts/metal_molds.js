@@ -1,3 +1,4 @@
+// arc furnace recycling
 ServerEvents.recipes(event => {
     event.remove({input: 'immersiveengineering:hammer', output: '#forge:plates'})
     const plate_metals = ['iron', 'gold', 'copper', 'aluminum', 'lead', 'nickel', 'silver', 'uranium', 'constantan', 'steel', 'electrum']
