@@ -60,4 +60,34 @@ ServerEvents.recipes(event => {
         C: 'minecraft:crafting_table',
         D: 'minecraft:chest'
     })
+    event.remove({id: 'immersiveengineering:crafting/rs_engineering'})
+    event.shaped(Item.of('immersiveengineering:rs_engineering', 2), [
+        'ABA',
+        'BCB',
+        'ABA'
+    ], {
+        A: '#forge:sheetmetals/iron',
+        B: 'kubejs:simple_redstone_alloy_ingot',
+        C: 'minecraft:copper_ingot'
+    })
+    event.remove({id: 'immersiveengineering:crafting/light_engineering'})
+    event.shaped(Item.of('immersiveengineering:light_engineering', 2), [
+        'ABA',
+        'BCB',
+        'ABA'
+    ], {
+        A: '#forge:sheetmetals/iron',
+        B: 'immersiveengineering:component_iron',
+        C: 'minecraft:copper_ingot'
+    })
+    event.remove({id: 'immersiveengineering:crafting/heavy_engineering'})
+    event.shaped(Item.of('immersiveengineering:heavy_engineering', 2), [
+        'ABA',
+        'BCB',
+        'ABA'
+    ], {
+        A: '#forge:sheetmetals/steel',
+        B: 'immersiveengineering:component_steel',
+        C: '#forge:ingots/steel'
+    })
 })

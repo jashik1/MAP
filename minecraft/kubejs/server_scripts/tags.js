@@ -29,4 +29,6 @@ ServerEvents.tags('item', event => {
   event.add('kubejs:igneous_pebbles', 'kubejs:diorite_pebble')
   event.remove('forge:gears/iron', 'enderio:iron_gear')
   event.add('forge:gears', 'enderio:iron_gear')
+  event.add('forge:ingots', 'kubejs:simple_redstone_alloy_ingot')
+  event.add('balm:ingots', 'kubejs:simple_redstone_alloy_ingot')
 })

@@ -1,6 +1,7 @@
 ServerEvents.recipes(event => {
   event.recipes.tconstruct.casting_basin('create:andesite_alloy').fluid('tconstruct:molten_copper', 20).cast('#forge:andesite').cast_consumed(true).cooling_time(30)
-  
+  event.recipes.create.mixing('create:andesite_alloy', ['miencraft:andesite', '#forge:nuggets/copper'])
+
   const transitionalItem = 'kubejs:unprocessed_hardened_brass_sheet'
   event.recipes.create.sequenced_assembly(
       [
@@ -94,9 +95,9 @@ ServerEvents.recipes(event => {
     })
     event.remove({id: 'create:crafting/kinetics/millstone'})
     event.shaped(Item.of('create:millstone', 1), [
-      ' A ',
-      ' B ',
-      ' C '
+      'A',
+      'B',
+      'C'
     ], {
       A: 'create:andesite_casing',
       B: 'kubejs:millstone_gear',
@@ -110,4 +111,30 @@ ServerEvents.recipes(event => {
       A: 'create:shaft',
       B: '#forge:stone'
     })
+    event.remove({id: 'create:crafting/kinetics/mechanical_crafter'})
+    event.shaped(Item.of('create:mechanical_crafter', 1), [
+      ' A ',
+      'BCD',
+      ' E '
+    ], {
+      A: 'create:electron_tube',
+      B: 'create:cogwheel',
+      C: 'create:brass_casing',
+      D: 'create:belt_connector',
+      E: 'minecraft:crafting_table'
+    })
+    event.remove({id: 'create:mechanical_crafting/crushing_wheel'})
+    event.recipes.create.mechanical_crafting('create:crushing_wheel', [
+    '  BBB  ',
+    ' BDDDB ',
+    'BDBDBDB',
+    'BDDADDB',
+    'BDBDBDB',
+    ' BDDDB ',
+    '  BBB  '
+  ], {
+    A: 'create:shaft',
+    B: 'create:andesite_alloy',
+    D: '#minecraft:planks'
+  })
 })
