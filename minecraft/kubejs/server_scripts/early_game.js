@@ -5,49 +5,42 @@ event.remove([{ output: 'minecraft:stone_axe' } , { output: 'minecraft:iron_axe'
 event.remove([{ output: 'minecraft:stone_sword' } , { output: 'minecraft:iron_sword' } , { output: 'minecraft:wooden_sword' } , { output: 'minecraft:golden_sword' } , { output: 'minecraft:diamond_sword' } , { output: 'ae2:nether_quartz_sword' } , { output: 'ae2:fluix_sword' } , { output: 'ae2:certus_quartz_sword' } , { output: 'immersiveengineering:sword_steel'} , { output: 'mekanismtools:bronze_sword'} , { output: 'mekanismtools:lapis_lazuli_sword'} , { output: 'mekanismtools:osmium_sword'} , { output: 'mekanismtools:refined_glowstone_sword'} , { output: 'mekanismtools:refined_obsidian_sword'} , { output: 'mekanismtools:steel_sword'}])
 event.remove([{ output: 'minecraft:stone_hoe' } , { output: 'minecraft:iron_hoe' } , { output: 'minecraft:wooden_hoe' } , { output: 'minecraft:golden_hoe' } , { output: 'minecraft:diamond_hoe' } , { output: 'ae2:nether_quartz_hoe' } , { output: 'ae2:fluix_hoe' } , { output: 'ae2:certus_quartz_hoe' } , { output: 'immersiveengineering:hoe_steel'} , { output: 'mekanismtools:bronze_hoe'} , { output: 'mekanismtools:lapis_lazuli_hoe'} , { output: 'mekanismtools:osmium_hoe'} , { output: 'mekanismtools:refined_glowstone_hoe'} , { output: 'mekanismtools:refined_obsidian_hoe'} , { output: 'mekanismtools:steel_hoe'}])
 event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:stick'}, {id:'tconstruct:tables/pattern'}, {id:'minecraft:furnace'}, {id:'minecraft:chest'}, {id:'minecraft:barrel'}])
-    event.shaped(
-  Item.of('minecraft:stick', 2),
-  [
+    event.shaped(Item.of('minecraft:stick', 2), [
     'A',
     'A'
-  ],
-  {
+  ], {
     A: '#minecraft:planks'
-  }
-)
-    event.shaped(Item.of('tconstruct:pattern', 1),
-  [
+  })
+    event.shaped(Item.of('immersiveengineering:stick_treated', 2), [
+      'A',
+      'A'
+    ], {
+      A: '#forge:treated_wood'
+    })
+    event.shaped(Item.of('tconstruct:pattern', 1), [
     'AB',
     'BA'
-  ],
-  {
+  ], {
     A: '#minecraft:planks',
     B: '#forge:rods/wooden'
-  }
-)
-    event.shaped(Item.of('minecraft:chest', 1),
-  [
+  })
+    event.shaped(Item.of('minecraft:chest', 1), [
     'AAA',
     'ABA',
     'AAA'
-  ],
-  {
+  ], {
     A: '#minecraft:planks',
     B: 'minecraft:iron_nugget'
-  }
-)
-    event.shaped(Item.of('minecraft:barrel', 1),
-  [
+  })
+    event.shaped(Item.of('minecraft:barrel', 1), [
     'ABA',
     'C C',
     'ABA'
-  ],
-  {
+  ], {
     A: '#minecraft:planks',
     B: '#minecraft:wooden_slabs',
     C: '#forge:rods/iron'
-  }
-)
+  })
   const sands = ['white', 'blue', 'pink', 'purple', 'black']
 	sands.forEach(sand => {
     event.campfireCooking(`minecraft:${sand}_stained_glass`, `biomeswevegone:${sand}_sand`, 0.35, 600)

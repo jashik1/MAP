@@ -90,11 +90,15 @@ ServerEvents.recipes(event => {
         B: 'immersiveengineering:component_steel',
         C: '#forge:ingots/electrum'
     })
-    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}'),[
-        'AB'
+    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}'), [
+        'CCC',
+        'BBB',
+        'DAD'
     ],{
         A: 'minecraft:blue_dye',
-        B: 'minecraft:paper'
+        B: 'minecraft:paper',
+        C: '#forge:dusts/iron',
+        D: 'minecraft:lapis_lazuli'
     })
     event.remove({id: 'immersiveengineering:crafting/blueprint_molds'})
     event.remove({id: 'immersiveengineering:crafting/blueprint_components'})
