@@ -88,6 +88,45 @@ ServerEvents.recipes(event => {
     ], {
         A: '#forge:sheetmetals/steel',
         B: 'immersiveengineering:component_steel',
-        C: '#forge:ingots/steel'
+        C: '#forge:ingots/electrum'
+    })
+    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}'),[
+        'AB'
+    ],{
+        A: 'minecraft:blue_dye',
+        B: 'minecraft:paper'
+    })
+    event.remove({id: 'immersiveengineering:crafting/blueprint_molds'})
+    event.remove({id: 'immersiveengineering:crafting/blueprint_components'})
+    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"molds"}'), [
+        'AAA',
+        'ABA',
+        'AAA'
+    ], {
+        A: '#forge:plates/steel',
+        B: Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}').weakNBT()
+    })
+    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"Mechanical Components"}'), [
+        ' A ',
+        'BCB',
+        ' A '
+    ],{
+        A: 'immersiveengineering:component_iron',
+        B: 'immersiveengineering:component_steel',
+        C: Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}').weakNBT()
+    })
+    event.remove({id: 'immersiveengineering:blueprint/component_iron'})
+    event.remove({id: 'immersiveengineering:blueprint/component_steel'})
+    event.recipes.immersiveengineering.blueprint('immersiveengineering:component_iron', ['2x #forge:plates/iron', 'minecraft:copper_ingot'], 'Mechanical Components')
+    event.recipes.immersiveengineering.blueprint('immersiveengineering:component_steel', ['2x #forge:plates/steel', 'minecraft:copper_ingot'], 'Mechanical Components')
+    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"electrode"}'), [
+        'ABA',
+        'DCD',
+        'ABA'
+    ],{
+        A: 'immersiveengineering:mold_rod',
+        B: 'immersiveengineering:ingot_hop_graphite',
+        C: Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}').weakNBT(),
+        D: Item.of('immersiveengineering:graphite_electrode', '{graphDmg:0}').weakNBT()
     })
 })

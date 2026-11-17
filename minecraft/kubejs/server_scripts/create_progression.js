@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   event.recipes.tconstruct.casting_basin('create:andesite_alloy').fluid('tconstruct:molten_copper', 20).cast('#forge:andesite').cast_consumed(true).cooling_time(30)
-  event.recipes.create.mixing('create:andesite_alloy', ['miencraft:andesite', '#forge:nuggets/copper'])
+  event.recipes.create.mixing('create:andesite_alloy', ['minecraft:andesite', '2x #forge:nuggets/copper'])
 
   const transitionalItem = 'kubejs:unprocessed_hardened_brass_sheet'
   event.recipes.create.sequenced_assembly(
@@ -152,4 +152,35 @@ ServerEvents.recipes(event => {
     F: 'createaddition:capacitor'
   })
   event.replaceInput({id: 'createaddition:crafting/spool'}, '#forge:nuggets/iron', '#forge:rods/iron')
+  event.remove({id: 'create:crafting/kinetics/mechanical_saw'})
+  event.shaped(Item.of('create:mechanical_saw', 1), [
+    'ABA',
+    'DCD'
+  ], {
+    A: '#forge:plates/iron',
+    B: 'immersiveengineering:sawblade',
+    C: 'create:brass_casing',
+    D: 'create:shaft'
+  })
+  event.remove({id: 'immersiveengineering:crafting/drillhead_steel'})
+  event.shaped(Item.of('immersiveengineering:drillhead_steel'), [
+    ' AB',
+    'ABA',
+    'CA '
+  ], {
+    A: '#forge:plates/steel',
+    B: '#forge:ingots/steel',
+    C: '#forge:storage_blocks/steel'
+  })
+  event.remove({id: 'create:crafting/kinetics/mechanical_drill'})
+  event.shaped(Item.of('create:mechanical_drill', 1), [
+    'ABA',
+    'ACA',
+    ' D '
+  ], {
+    A: '#forge:plates/iron',
+    B: 'immersiveengineering:drillhead_steel',
+    C: 'create:brass_casing',
+    D: 'create:shaft'
+  })
 })
