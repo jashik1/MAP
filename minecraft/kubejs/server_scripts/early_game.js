@@ -54,6 +54,7 @@ event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:stick'}, {id:'tcon
     E: 'minecraft:redstone',
     F: 'create:piston_extension_pole'
   })
+
   const iron_replace = ['minecart', 'hopper', 'cauldron', 'bucket']
   iron_replace.forEach(iron => {
     event.replaceInput({id: `minecraft:${iron}`}, 'minecraft:iron_ingot', '#forge:plates/iron')
