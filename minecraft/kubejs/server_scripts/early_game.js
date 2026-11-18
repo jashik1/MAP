@@ -41,6 +41,23 @@ event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:stick'}, {id:'tcon
     B: '#minecraft:wooden_slabs',
     C: '#forge:rods/iron'
   })
+  event.remove({id: 'minecraft:piston'})
+  event.shaped(Item.of('minecraft:piston'), [
+    'ABA',
+    'CDC',
+    'EFE'
+  ], {
+    A: 'minecraft:iron_nugget',
+    B: '#minecraft:planks',
+    C: 'minecraft:cobblestone',
+    D: 'minecraft:iron_ingot',
+    E: 'minecraft:redstone',
+    F: 'create:piston_extension_pole'
+  })
+  const iron_replace = ['minecart', 'hopper', 'cauldron', 'bucket']
+  iron_replace.forEach(iron => {
+    event.replaceInput({id: `minecraft:${iron}`}, 'minecraft:iron_ingot', '#forge:plates/iron')
+  })
   const sands = ['white', 'blue', 'pink', 'purple', 'black']
 	sands.forEach(sand => {
     event.campfireCooking(`minecraft:${sand}_stained_glass`, `biomeswevegone:${sand}_sand`, 0.35, 600)

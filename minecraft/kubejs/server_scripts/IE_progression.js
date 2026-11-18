@@ -94,7 +94,7 @@ ServerEvents.recipes(event => {
         'CCC',
         'BBB',
         'DAD'
-    ],{
+    ], {
         A: 'minecraft:blue_dye',
         B: 'minecraft:paper',
         C: '#forge:dusts/iron',
@@ -114,7 +114,7 @@ ServerEvents.recipes(event => {
         ' A ',
         'BCB',
         ' A '
-    ],{
+    ], {
         A: 'immersiveengineering:component_iron',
         B: 'immersiveengineering:component_steel',
         C: Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}').weakNBT()
@@ -127,10 +127,68 @@ ServerEvents.recipes(event => {
         'ABA',
         'DCD',
         'ABA'
-    ],{
+    ], {
         A: 'immersiveengineering:mold_rod',
         B: 'immersiveengineering:ingot_hop_graphite',
         C: Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}').weakNBT(),
         D: Item.of('immersiveengineering:graphite_electrode', '{graphDmg:0}').weakNBT()
     })
+    event.remove({id: 'immersiveengineering:crafting/fluid_pipe'})
+    event.shaped(Item.of('immersiveengineering:fluid_pipe', 3), [
+        'AAA',
+        'B B',
+        'AAA'
+    ], {
+        A: '#forge:plates/iron',
+        B: 'minecraft:bucket'
+    })
+    event.remove({id: 'create:crafting/kinetics/fluid_pipe'})
+    event.remove({id: 'create:crafting/kinetics/fluid_pipe_vertical'})
+    event.shaped(Item.of('create:fluid_pipe'), [
+        'ABA'
+    ], {
+        A: '#forge:plates/copper',
+        B: 'immersiveengineering:fluid_pipe'
+    })
+    event.shaped(Item.of('create:fluid_pipe'), [
+        'A',
+        'B',
+        'A'
+    ], {
+        A: '#forge:plates/copper',
+        B: 'immersiveengineering:fluid_pipe'
+    })
+    event.remove({id: 'immersiveengineering:crafting/wooden_barrel'})
+    event.shaped(Item.of('immersiveengineering:wooden_barrel'), [
+        'ABA',
+        'C C',
+        'ABA'
+    ], {
+        A: '#forge:treated_wood',
+        B: '#forge:treated_wood_slab',
+        C: '#forge:rods/iron'
+    })
+    event.remove({id: 'immersiveengineering:crafting/blastbrick_reinforced'})
+    event.remove({id: 'createaddition:compat/immersiveengineering/item_application/reinforced_blast_brick'})
+    event.shaped(Item.of('immersiveengineering:blastbrick_reinforced'), [
+        'ABA',
+        'CDC',
+        'ABA'
+    ], {
+        A: '#forge:plates/steel',
+        B: 'minecraft:blaze_powder',
+        C: 'minecraft:red_nether_bricks',
+        D: 'immersiveengineering:blastbrick'
+    })
+    event.remove({id: 'immersiveengineering:crafting/radiator'})
+    event.shaped(Item.of('immersiveengineering:radiator', 2), [
+        'ABA',
+        'BCB',
+        'ABA'
+    ], {
+        A: 'immersiveengineering:sheetmetal_steel',
+        B: '#forge:plates/constantan',
+        C: ''
+    })
+    
 })
