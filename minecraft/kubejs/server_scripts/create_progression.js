@@ -26,12 +26,9 @@ ServerEvents.recipes(event => {
     event.replaceInput({id: 'create:item_application/copper_casing_from_log'}, '#forge:stripped_logs', 'create:andesite_casing')
     event.remove({id: 'create:item_application/copper_casing_from_wood'})
 
-    event.remove({id: 'create:crushing/diorite_recycling'})
-    event.recipes.create.crushing(Item.of('minecraft:quartz').withChance(0.9), '#create:stone_types/diorite')
-    event.remove({id: 'create:crushing/diorite'})
-    event.recipes.create.milling(Item.of('minecraft:quartz').withChance(0.6), '#create:stone_types/diorite')
+    event.recipes.create.crushing(Item.of('minecraft:quartz').withChance(0.9), '#create:stone_types/diorite').id('create:crushing/diorite_recycling')
+    event.recipes.create.milling(Item.of('minecraft:quartz').withChance(0.6), '#create:stone_types/diorite').id('create:crushing/diorite')
 
-    event.remove({id: 'create:crafting/kinetics/mechanical_press'})
     event.shaped(Item.of('create:mechanical_press', 1), [
       ' B ',
       'EAE',
@@ -42,8 +39,8 @@ ServerEvents.recipes(event => {
       C: 'minecraft:iron_block',
       D: '#forge:plates/iron',
       E: 'create:cogwheel'
-    })
-    event.remove({id: 'create:crafting/kinetics/encased_fan'})
+    }).id('create:crafting/kinetics/mechanical_press')
+
     event.shaped(Item.of('create:encased_fan', 1), [
       ' B ',
       ' A ',
@@ -53,8 +50,8 @@ ServerEvents.recipes(event => {
       B: 'create:shaft',
       C: 'create:propeller',
       D: 'minecraft:iron_bars'
-    })
-    event.remove({id: 'create:crafting/kinetics/mechanical_mixer'})
+    }).id('create:crafting/kinetics/encased_fan')
+
     event.shaped(Item.of('create:mechanical_mixer', 1), [
       ' B ',
       'DAD',
@@ -64,8 +61,7 @@ ServerEvents.recipes(event => {
       B: 'create:cogwheel',
       C: 'create:whisk',
       D: 'create:piston_extension_pole'
-    })
-    event.remove({id: 'create:crafting/kinetics/spout'})
+    }).id('create:crafting/kinetics/mechanical_mixer')
     event.shaped(Item.of('create:spout', 1), [
       ' A ',
       'DBD',
@@ -75,7 +71,7 @@ ServerEvents.recipes(event => {
       B: 'create:fluid_tank',
       C: 'kubejs:nozzle',
       D: 'create:andesite_alloy'
-    })
+    }).id('create:crafting/kinetics/spout')
     event.shaped(Item.of('kubejs:nozzle', 1), [
       'ABA',
       ' A '
@@ -83,7 +79,7 @@ ServerEvents.recipes(event => {
       A: '#forge:plates/copper',
       B: 'minecraft:dried_kelp'
     })
-    event.remove({id: 'create:crafting/kinetics/fluid_tank'})
+
     event.shaped(Item.of('create:fluid_tank', 1), [
       'ABA',
       'BCB',
@@ -92,8 +88,8 @@ ServerEvents.recipes(event => {
       A: '#forge:plates/copper',
       B: '#forge:glass',
       C: 'minecraft:barrel'
-    })
-    event.remove({id: 'create:crafting/kinetics/millstone'})
+    }).id('create:crafting/kinetics/fluid_tank')
+
     event.shaped(Item.of('create:millstone', 1), [
       'A',
       'B',
@@ -102,7 +98,8 @@ ServerEvents.recipes(event => {
       A: 'create:andesite_casing',
       B: 'kubejs:millstone_gear',
       C: '#forge:stone'
-    })
+    }).id('create:crafting/kinetics/millstone')
+
     event.shaped(Item.of('kubejs:millstone_gear', 1), [
       'BBB',
       'BAB',
@@ -111,7 +108,9 @@ ServerEvents.recipes(event => {
       A: 'create:shaft',
       B: '#forge:stone'
     })
-    event.remove({id: 'create:crafting/kinetics/mechanical_crafter'})
+
+    //!!!TODO: DEPLOYER!!! (and maybe more)
+
     event.shaped(Item.of('create:mechanical_crafter', 1), [
       ' A ',
       'BCD',
@@ -122,8 +121,8 @@ ServerEvents.recipes(event => {
       C: 'create:brass_casing',
       D: 'create:belt_connector',
       E: 'minecraft:crafting_table'
-    })
-    event.remove({id: 'create:mechanical_crafting/crushing_wheel'})
+    }).id('create:crafting/kinetics/mechanical_crafter')
+
     event.recipes.create.mechanical_crafting('create:crushing_wheel', [
     '  BBB  ',
     ' BDDDB ',
@@ -136,8 +135,8 @@ ServerEvents.recipes(event => {
     A: 'create:shaft',
     B: 'create:andesite_alloy',
     D: '#minecraft:planks'
-  })
-  event.remove({id: 'createaddition:mechanical_crafting/alternator'})
+  }).id('create:mechanical_crafting/crushing_wheel')
+
   event.recipes.create.mechanical_crafting('createaddition:alternator', [
     '  A  ',
     ' BCB ',
@@ -150,9 +149,10 @@ ServerEvents.recipes(event => {
     D: '#forge:rods/iron',
     E: '#forge:plates/iron',
     F: 'createaddition:capacitor'
-  })
+  }).id('createaddition:mechanical_crafting/alternator')
+
   event.replaceInput({id: 'createaddition:crafting/spool'}, '#forge:nuggets/iron', '#forge:rods/iron')
-  event.remove({id: 'create:crafting/kinetics/mechanical_saw'})
+
   event.shaped(Item.of('create:mechanical_saw', 1), [
     'ABA',
     'DCD'
@@ -161,8 +161,8 @@ ServerEvents.recipes(event => {
     B: 'immersiveengineering:sawblade',
     C: 'create:brass_casing',
     D: 'create:shaft'
-  })
-  event.remove({id: 'immersiveengineering:crafting/drillhead_steel'})
+  }).id('create:crafting/kinetics/mechanical_saw')
+
   event.shaped(Item.of('immersiveengineering:drillhead_steel'), [
     ' AB',
     'ABA',
@@ -171,8 +171,8 @@ ServerEvents.recipes(event => {
     A: '#forge:plates/steel',
     B: '#forge:ingots/steel',
     C: '#forge:storage_blocks/steel'
-  })
-  event.remove({id: 'create:crafting/kinetics/mechanical_drill'})
+  }).id('immersiveengineering:crafting/drillhead_steel')
+
   event.shaped(Item.of('create:mechanical_drill', 1), [
     'ABA',
     'ACA',
@@ -182,5 +182,5 @@ ServerEvents.recipes(event => {
     B: 'immersiveengineering:drillhead_steel',
     C: 'create:brass_casing',
     D: 'create:shaft'
-  })
+  }).id('create:crafting/kinetics/mechanical_drill')
 })

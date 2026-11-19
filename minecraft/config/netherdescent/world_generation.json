@@ -1,0 +1,14 @@
+{
+  "biomes": {
+    "sythian_torrids": true,
+    "wailing_garth": true,
+    "crimson_gardens": true,
+    "arisian_undergrowth": true,
+    "embur_bog": true
+  },
+  "regionWeight": {
+    "comment": "Only used when using with Terrablender",
+    "value": 10
+  },
+  "blue_fortress": true
+}

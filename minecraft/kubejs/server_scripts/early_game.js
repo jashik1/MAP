@@ -4,26 +4,26 @@ event.remove([{ output: 'minecraft:stone_shovel' } , { output: 'minecraft:iron_s
 event.remove([{ output: 'minecraft:stone_axe' } , { output: 'minecraft:iron_axe' } , { output: 'minecraft:wooden_axe' } , { output: 'minecraft:golden_axe' } , { output: 'minecraft:diamond_axe' } , { output: 'ae2:nether_quartz_axe' } , { output: 'ae2:fluix_axe' } , { output: 'ae2:certus_quartz_axe' } , { output: 'immersiveengineering:axe_steel'} , { output: 'mekanismtools:bronze_axe'} , { output: 'mekanismtools:lapis_lazuli_axe'} , { output: 'mekanismtools:osmium_axe'} , { output: 'mekanismtools:refined_glowstone_axe'} , { output: 'mekanismtools:refined_obsidian_axe'} , { output: 'mekanismtools:steel_axe'}])
 event.remove([{ output: 'minecraft:stone_sword' } , { output: 'minecraft:iron_sword' } , { output: 'minecraft:wooden_sword' } , { output: 'minecraft:golden_sword' } , { output: 'minecraft:diamond_sword' } , { output: 'ae2:nether_quartz_sword' } , { output: 'ae2:fluix_sword' } , { output: 'ae2:certus_quartz_sword' } , { output: 'immersiveengineering:sword_steel'} , { output: 'mekanismtools:bronze_sword'} , { output: 'mekanismtools:lapis_lazuli_sword'} , { output: 'mekanismtools:osmium_sword'} , { output: 'mekanismtools:refined_glowstone_sword'} , { output: 'mekanismtools:refined_obsidian_sword'} , { output: 'mekanismtools:steel_sword'}])
 event.remove([{ output: 'minecraft:stone_hoe' } , { output: 'minecraft:iron_hoe' } , { output: 'minecraft:wooden_hoe' } , { output: 'minecraft:golden_hoe' } , { output: 'minecraft:diamond_hoe' } , { output: 'ae2:nether_quartz_hoe' } , { output: 'ae2:fluix_hoe' } , { output: 'ae2:certus_quartz_hoe' } , { output: 'immersiveengineering:hoe_steel'} , { output: 'mekanismtools:bronze_hoe'} , { output: 'mekanismtools:lapis_lazuli_hoe'} , { output: 'mekanismtools:osmium_hoe'} , { output: 'mekanismtools:refined_glowstone_hoe'} , { output: 'mekanismtools:refined_obsidian_hoe'} , { output: 'mekanismtools:steel_hoe'}])
-event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:stick'}, {id:'tconstruct:tables/pattern'}, {id:'minecraft:furnace'}, {id:'minecraft:chest'}, {id:'minecraft:barrel'}])
+event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:furnace'}])
     event.shaped(Item.of('minecraft:stick', 2), [
     'A',
     'A'
   ], {
     A: '#minecraft:planks'
-  })
+  }).id('minecraft:stick')
     event.shaped(Item.of('immersiveengineering:stick_treated', 2), [
       'A',
       'A'
     ], {
       A: '#forge:treated_wood'
-    })
+    }).id('immersiveengineering:crafting/stick_treated')
     event.shaped(Item.of('tconstruct:pattern', 1), [
     'AB',
     'BA'
   ], {
     A: '#minecraft:planks',
     B: '#forge:rods/wooden'
-  })
+  }).id('tconstruct:tables/pattern')
     event.shaped(Item.of('minecraft:chest', 1), [
     'AAA',
     'ABA',
@@ -31,7 +31,7 @@ event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:stick'}, {id:'tcon
   ], {
     A: '#minecraft:planks',
     B: 'minecraft:iron_nugget'
-  })
+  }).id('minecraft:chest')
     event.shaped(Item.of('minecraft:barrel', 1), [
     'ABA',
     'C C',
@@ -40,7 +40,7 @@ event.remove([{id:'minecraft:crafting_table'}, {id:'minecraft:stick'}, {id:'tcon
     A: '#minecraft:planks',
     B: '#minecraft:wooden_slabs',
     C: '#forge:rods/iron'
-  })
+  }).id('minecraft:barrel')
   event.remove({id: 'minecraft:piston'})
   event.shaped(Item.of('minecraft:piston'), [
     'ABA',

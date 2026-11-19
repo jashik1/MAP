@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-    const wood_types = ['minecraft:oak', 'minecraft:spruce', 'minecraft:birch', 'minecraft:jungle', 'minecraft:acacia', 'minecraft:dark_oak', 'minecraft:mangrove', 'minecraft:cherry', 'minecraft:bamboo', 'minecraft:crimson', 'minecraft:warped', 'biomeswevegone:aspen', 'biomeswevegone:baobab', 'biomeswevegone:blue_enchanted', 'biomeswevegone:cika', 'biomeswevegone:cypress', 'biomeswevegone:ebony', 'biomeswevegone:fir', 'biomeswevegone:florus', 'biomeswevegone:green_enchanted', 'biomeswevegone:holly', 'biomeswevegone:ironwood', 'biomeswevegone:jacaranda', 'biomeswevegone:mahogany', 'biomeswevegone:maple', 'biomeswevegone:palm', 'biomeswevegone:pine', 'biomeswevegone:rainbow_eucalyptus', 'biomeswevegone:redwood', 'biomeswevegone:sakura', 'biomeswevegone:skyris', 'biomeswevegone:spirit', 'biomeswevegone:white_mangrove', 'biomeswevegone:willow', 'biomeswevegone:witch_hazel', 'biomeswevegone:zelkova', 'tconstruct:greenheart', 'tconstruct:skyroot', 'tconstruct:bloodshroom', 'tconstruct:enderbark', 'netherdescent:arisian', 'netherdescent:embur', 'netherdescent:sythian', 'netherdescent:wailing']
+    const wood_types = ['minecraft:oak', 'minecraft:spruce', 'minecraft:birch', 'minecraft:jungle', 'minecraft:acacia', 'minecraft:dark_oak', 'minecraft:mangrove', 'minecraft:cherry', 'minecraft:bamboo', 'minecraft:crimson', 'minecraft:warped', 'biomeswevegone:aspen', 'biomeswevegone:baobab', 'biomeswevegone:blue_enchanted', 'biomeswevegone:cika', 'biomeswevegone:cypress', 'biomeswevegone:ebony', 'biomeswevegone:fir', 'biomeswevegone:florus', 'biomeswevegone:green_enchanted', 'biomeswevegone:holly', 'biomeswevegone:ironwood', 'biomeswevegone:jacaranda', 'biomeswevegone:mahogany', 'biomeswevegone:maple', 'biomeswevegone:palm', 'biomeswevegone:pine', 'biomeswevegone:rainbow_eucalyptus', 'biomeswevegone:redwood', 'biomeswevegone:sakura', 'biomeswevegone:skyris', 'biomeswevegone:white_mangrove', 'biomeswevegone:willow', 'biomeswevegone:witch_hazel', 'biomeswevegone:zelkova', 'tconstruct:greenheart', 'tconstruct:skyroot', 'tconstruct:bloodshroom', 'tconstruct:enderbark', 'netherdescent:arisian', 'netherdescent:embur', 'netherdescent:sythian', 'netherdescent:wailing']
 event.remove({id: 'tconstruct:world/wood/greenheart/fence'})
 event.remove({id: 'tconstruct:world/wood/skyroot/fence'})
 event.remove({id: 'tconstruct:world/wood/bloodshroom/fence'})
@@ -67,4 +67,16 @@ wood_types.forEach(fence => {
     A: 'netherdescent:blue_nether_bricks',
     B: 'netherdescent:blue_nether_brick'
   }).id('netherdescent:blue_nether_brick_fence')
+  event.recipes.tconstruct.casting_basin('tconstruct:nahuatl_fence')
+    .fluid('tconstruct:molten_obsidian', 750)
+    .cast('#minecraft:wooden_fences')
+    .cast_consumed(true)
+    .cooling_time(100)
+    .id('tconstruct:smeltery/casting/obsidian/nahuatl_fence')
+  event.recipes.tconstruct.casting_basin('tconstruct:blazewood_fence')
+    .fluid('tconstruct:blazing_blood', 600)
+    .cast('#minecraft:wooden_fences')
+    .cast_consumed(true)
+    .cooling_time(120)
+    .id('tconstruct:smeltery/casting/blazewood_fence')
 })
