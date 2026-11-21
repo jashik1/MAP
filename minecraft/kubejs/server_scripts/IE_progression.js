@@ -91,8 +91,6 @@ ServerEvents.recipes(event => {
         C: '#forge:ingots/electrum'
     }).id('immersiveengineering:crafting/heavy_engineering')
 
-    //!!!TODO: CRAFTING COMPONENTS!!!
-
     event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"Empty"}'), [
         'CCC',
         'BBB',
@@ -172,7 +170,7 @@ ServerEvents.recipes(event => {
     }).id('immersiveengineering:crafting/wooden_barrel')
 
     event.remove({id: 'createaddition:compat/immersiveengineering/item_application/reinforced_blast_brick'})
-    event.shaped(Item.of('immersiveengineering:blastbrick_reinforced'), [
+    event.shaped('immersiveengineering:blastbrick_reinforced', [
         'ABA',
         'CDC',
         'ABA'
@@ -183,13 +181,32 @@ ServerEvents.recipes(event => {
         D: 'immersiveengineering:blastbrick'
     }).id('immersiveengineering:crafting/blastbrick_reinforced')
 
-    event.shaped(Item.of('immersiveengineering:radiator', 2), [
-        'ABA',
-        'BCB',
-        'ABA'
-    ], {
-        A: 'immersiveengineering:sheetmetal_steel',
-        B: '#forge:plates/constantan',
-        C: ''
-    }).id('immersiveengineering:crafting/radiator')  
+    event.custom({
+        type: 'immersiveengineering:turn_and_copy',
+        category: 'misc',
+        key: {
+            a: {
+                tag: 'forge:sheetmetals/steel'
+            },
+            b: {
+            type: 'immersiveengineering:fluid',
+            amount: 1000,
+            tag: 'minecraft:water'
+            },
+            c: {
+            tag: 'forge:plates/constantan'
+            }
+        },
+        pattern: [
+            'aca',
+            'cbc',
+            'aca'
+        ],
+        quarter_turn: true,
+        result: {
+            count: 2,
+            item: 'immersiveengineering:radiator'
+        },
+        show_notification: true
+    }).id('immersiveengineering:crafting/radiator')
 })

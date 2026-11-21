@@ -9,4 +9,5 @@
   event.hide('tconstruct:plate_red_sand_cast')
   event.hide('tconstruct:wire_red_sand_cast')
   event.hide('createaddition:iron_rod')
+  event.hide('kubejs:unprocessed_hardened_brass_sheet')
 })

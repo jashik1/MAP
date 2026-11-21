@@ -20,6 +20,24 @@ ServerEvents.recipes(event => {
     .transitionalItem(transitionalItem)
     .loops(1)
 
+  const transitionalItem2 = 'create:incomplete_precision_mechanism'
+  event.recipes.create.sequenced_assembly(
+      [
+        'create:precision_mechanism'
+      ],
+        'create:brass_sheet', 
+      [
+        event.recipes.create.deploying(transitionalItem2, [transitionalItem2, 'create:cogwheel']),
+        event.recipes.create.deploying(transitionalItem2, [transitionalItem2, 'create:large_cogwheel']),
+        event.recipes.create.deploying(transitionalItem2, [transitionalItem2, 'create:andesite_alloy']),
+        event.recipes.create.deploying(transitionalItem2, [transitionalItem2, 'minecraft:iron_nugget']),
+        event.recipes.create.deploying(transitionalItem2, [transitionalItem2, 'minecraft:redstone']),
+      ]
+    )
+    .transitionalItem(transitionalItem2)
+    .loops(6)
+    .id('create:sequenced_assembly/precision_mechanism')
+
     event.replaceInput({id: 'create:item_application/brass_casing_from_log'}, 'create:brass_ingot', 'kubejs:hardened_brass_sheet')
     event.replaceInput({id: 'create:item_application/brass_casing_from_log'}, '#forge:stripped_logs', 'create:andesite_casing')
     event.remove({id: 'create:item_application/brass_casing_from_wood'})
@@ -109,7 +127,18 @@ ServerEvents.recipes(event => {
       B: '#forge:stone'
     })
 
-    //!!!TODO: DEPLOYER!!! (and maybe more)
+    event.shaped(Item.of('create:deployer', 1), [
+      'ABC',
+      'DED',
+      ' F '
+    ], {
+      A: 'create:piston_extension_pole',
+      B: 'create:electron_tube',
+      C: 'create:shaft',
+      D: 'create:cogwheel',
+      E: 'create:andesite_casing',
+      F: 'create:brass_hand'
+    }).id('create:crafting/kinetics/deployer')
 
     event.shaped(Item.of('create:mechanical_crafter', 1), [
       ' A ',
