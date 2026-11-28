@@ -28,23 +28,22 @@ ServerEvents.recipes(event =>{
         }],
     time: 400
     }).id('industrialforegoing:machine_frame_pity')
-    /*
-    event.custom({
-    type: "immersiveengineering:arc_furnace",
-    additives: [{
-        tag: "forge:ingots/silver"
-        }],
-    energy: 51200,
-    input: {
-        tag: "forge:ingots/gold"
-    },
-    results: [{
-        base_ingredient: {
-            tag: "forge:ingots/electrum"
-        },
-        count: 2
-        }],
-    time: 100
-    })
-    */
+    event.shaped('industrialforegoing:fluid_extractor', [
+        'ABA',
+        'CDC',
+        'AEA'
+    ], {
+        A: '#forge:ingots/steel',
+        B: 'industrialforegoing:common_black_hole_tank',
+        C: '#forge:plates/iron',
+        D: 'industrialforegoing:machine_frame_pity',
+        E: 'minecraft:piston'
+    }).id('industrialforegoing:fluid_extractor')
+
+    event.replaceInput('industrialforegoing:common_black_hole_tank', '#forge:gears/iron', 'create:fluid_tank')
+    event.replaceInput('industrialforegoing:common_black_hole_tank', '#forge:ingots/iron', '#forge:ingots/steel')
+
+    event.replaceInput('industrialforegoing:latex_processing_unit', '#forge:ingots/iron', '#forge:ingots/steel')
+    event.replaceInput('industrialforegoing:latex_processing_unit', 'minecraft:redstone_block', 'kubejs:simple_redstone_alloy_block')
+
 })

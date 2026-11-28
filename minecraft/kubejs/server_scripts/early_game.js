@@ -4,7 +4,7 @@ event.remove([{ output: 'minecraft:stone_shovel' } , { output: 'minecraft:iron_s
 event.remove([{ output: 'minecraft:stone_axe' } , { output: 'minecraft:iron_axe' } , { output: 'minecraft:wooden_axe' } , { output: 'minecraft:golden_axe' } , { output: 'minecraft:diamond_axe' } , { output: 'ae2:nether_quartz_axe' } , { output: 'ae2:fluix_axe' } , { output: 'ae2:certus_quartz_axe' } , { output: 'immersiveengineering:axe_steel'} , { output: 'mekanismtools:bronze_axe'} , { output: 'mekanismtools:lapis_lazuli_axe'} , { output: 'mekanismtools:osmium_axe'} , { output: 'mekanismtools:refined_glowstone_axe'} , { output: 'mekanismtools:refined_obsidian_axe'} , { output: 'mekanismtools:steel_axe'}])
 event.remove([{ output: 'minecraft:stone_sword' } , { output: 'minecraft:iron_sword' } , { output: 'minecraft:wooden_sword' } , { output: 'minecraft:golden_sword' } , { output: 'minecraft:diamond_sword' } , { output: 'ae2:nether_quartz_sword' } , { output: 'ae2:fluix_sword' } , { output: 'ae2:certus_quartz_sword' } , { output: 'immersiveengineering:sword_steel'} , { output: 'mekanismtools:bronze_sword'} , { output: 'mekanismtools:lapis_lazuli_sword'} , { output: 'mekanismtools:osmium_sword'} , { output: 'mekanismtools:refined_glowstone_sword'} , { output: 'mekanismtools:refined_obsidian_sword'} , { output: 'mekanismtools:steel_sword'}])
 event.remove([{ output: 'minecraft:stone_hoe' } , { output: 'minecraft:iron_hoe' } , { output: 'minecraft:wooden_hoe' } , { output: 'minecraft:golden_hoe' } , { output: 'minecraft:diamond_hoe' } , { output: 'ae2:nether_quartz_hoe' } , { output: 'ae2:fluix_hoe' } , { output: 'ae2:certus_quartz_hoe' } , { output: 'immersiveengineering:hoe_steel'} , { output: 'mekanismtools:bronze_hoe'} , { output: 'mekanismtools:lapis_lazuli_hoe'} , { output: 'mekanismtools:osmium_hoe'} , { output: 'mekanismtools:refined_glowstone_hoe'} , { output: 'mekanismtools:refined_obsidian_hoe'} , { output: 'mekanismtools:steel_hoe'}])
-event.remove({id:'minecraft:furnace'})
+
     event.shaped(Item.of('minecraft:stick', 2), [
     'A',
     'A'
@@ -18,6 +18,15 @@ event.remove({id:'minecraft:furnace'})
   ], {
     A: '#minecraft:planks'
   }).id('minecraft:crafting_table')
+    event.shaped('minecraft:furnace', [
+      'BBB',
+      'BAB',
+      'BCB'
+    ], {
+      A: 'create:andesite_casing',
+      B: 'minecraft:cobblestone',
+      C: 'create:andesite_alloy'
+    }).id('minecraft:furnace')
     event.shaped(Item.of('immersiveengineering:stick_treated', 2), [
       'A',
       'A'

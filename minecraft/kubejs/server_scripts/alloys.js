@@ -5,5 +5,24 @@ ServerEvents.recipes(event => {
     event.recipes.enderio.alloy_smelting(Item.of('enderio:redstone_alloy_ingot', 1), [
         Item.of('kubejs:simple_redstone_alloy_ingot'), Ingredient.of('#forge:silicon')
     ])
-    
+    event.shaped('kubejs:simple_redstone_alloy_block', [
+        'AAA',
+        'AAA',
+        'AAA'
+    ], {
+        A:  'kubejs:simple_redstone_alloy_ingot'
+    })
+    event.shaped('kubejs:simple_redstone_alloy_ingot', [
+        'AAA',
+        'AAA',
+        'AAA'
+    ], {
+        A:  'kubejs:simple_redstone_alloy_nugget'
+    })
+    event.shapeless(Item.of('kubejs:simple_redstone_alloy_ingot', 9), [
+        'kubejs:simple_redstone_alloy_block'
+    ])
+    event.shapeless(Item.of('kubejs:simple_redstone_alloy_nugget', 9), [
+        'kubejs:simple_redstone_alloy_ingot'
+    ])
 })

@@ -4,4 +4,6 @@ StartupEvents.registry('item', event => {
     event.create('nozzle')
     event.create('millstone_gear')
     event.create('simple_redstone_alloy_ingot')
+    event.create('simple_redstone_alloy_nugget')
+    event.create('simple_redstone_alloy_block')
 })
